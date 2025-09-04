@@ -1,52 +1,114 @@
-#homepage {
-    hyphens: manual;
-}
 
 #homepage .section {
     width: 100%;
-    max-width: 100%;
+    max-width: 1000px;
     padding: 2em 1em;
+    margin: 0 auto;
 }
 
-#homepage h1 { 
-    font-size: 1.4rem;
-    text-align: center;
-    line-height: 1.3;
-    margin: 2em 0;
-    
-    /* Mobile-first: full width */
-    width: 100%;
-    max-width: 100%;
-    
-    /* On larger screens, use a consistent max-width */
-    @media (min-width: 620px) {
-        font-size: 2rem;
-        max-width: 700px; /* Adjust this value based on your content */
+#homepage .factcard {
+    border: 1px solid #ebe0d6;
+    background-color: #fcfbf9;
+    border-radius: 0.6em;
+    overflow: hidden;
+    margin: 1em 0;
+}
+.factcard h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    flex: 1;
+}
+@media (max-width: 620px) {
+    .factcard h1 {
+        font-size: 1.2em;
     }
-    
-    /* Ensure consistent wrapping behavior */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
-#homepage h1 em {
+.factcard blockquote {
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 2rem;
+    border-left: 0.25rem solid #357edd;
+    line-height: 1.5;
+}
+
+
+.factcard-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.factcard-header:hover {
+    background-color: #f6f1ef;
+    cursor: pointer;
+}
+.factcard-number {
+    font-family: "Andale Mono", monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0 20px 0 4px;
+    background-color: #b7d0f1;
+    opacity: 1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+@media (max-width: 620px) {
+    .factcard-number {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+        margin: 0 16px 0 0;
+    }
+}
+.factcard-number::after {
+    content: '';
+}
+
+.factcard-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease, padding 0.1s ease;
+}
+
+.factcard.expanded .factcard-content {
+    max-height: 500px;
+    padding: 0 20px 20px 20px;
+}
+
+
+
+/* caret expander element for cards */
+.caret-pseudo {
     position: relative;
-    text-decoration: none;
-    color: #dc9b9b;
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
 }
 
-/* underline effect */
-#homepage h1 em::after {
+.caret-pseudo::before {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 3px;
-    background: #dc9b9b;
-    border-radius: 50%;
-    transform: rotate(-1deg);
-    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #5f6368;
+    border-bottom: 2px solid #5f6368;
+    transform: translate(-50%, -65%) rotate(45deg);
+    transition: transform 0.1s ease;
+}
+
+.factcard.expanded .caret-pseudo::before {
+    transform: translate(-50%, -35%) rotate(-135deg);
 }
 
 /* video container */

@@ -7,7 +7,7 @@ SectionPagesMenu = "main"
 
 [params]
 custom_css = ["custom.css"]
-body_classes = "avenir bg-dark-gray near-white"
+body_classes = "avenir bg-near-white"
 
 [markup.goldmark.renderer]
 unsafe = true
