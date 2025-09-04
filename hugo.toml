@@ -1,0 +1,13 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'AI Is Dangerous'
+theme = 'ananke'
+
+SectionPagesMenu = "main"
+
+[params]
+custom_css = ["custom.css"]
+body_classes = "avenir bg-dark-gray near-white"
+
+[markup.goldmark.renderer]
+unsafe = true

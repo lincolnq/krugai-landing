@@ -1,0 +1,61 @@
+#homepage {
+    hyphens: manual;
+}
+
+#homepage .section {
+    width: 100%;
+    max-width: 100%;
+    padding: 2em 1em;
+}
+
+#homepage h1 { 
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.3;
+    margin: 2em 0;
+    
+    /* Mobile-first: full width */
+    width: 100%;
+    max-width: 100%;
+    
+    /* On larger screens, use a consistent max-width */
+    @media (min-width: 620px) {
+        font-size: 2rem;
+        max-width: 700px; /* Adjust this value based on your content */
+    }
+    
+    /* Ensure consistent wrapping behavior */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#homepage h1 em {
+    position: relative;
+    text-decoration: none;
+    color: #dc9b9b;
+}
+
+/* underline effect */
+#homepage h1 em::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: #dc9b9b;
+    border-radius: 50%;
+    transform: rotate(-1deg);
+    opacity: 0.8;
+}
+
+/* video container */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
