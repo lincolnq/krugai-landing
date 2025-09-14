@@ -6,6 +6,20 @@
     margin: 0 auto;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.sidebar {
+    height: 100%;
+    background-color: #ccc;
+    width: 300px;
+    padding: 2em 1em;
+    margin: 0 auto;
+}
+
 #homepage .factcard {
     border: 1px solid #ebe0d6;
     background-color: #fcfbf9;
@@ -38,11 +52,24 @@
     padding: 16px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 }
 .factcard-header:hover {
     background-color: #f6f1ef;
     cursor: pointer;
+}
+.factcard-preview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ebe0d6;
+}
+.factcard-preview-image {
+    width: 75px;
+    height: 75px;
+    background-color: #ccc;
+    border-radius: 50%;
 }
 .factcard-number {
     font-family: "Andale Mono", monospace;
